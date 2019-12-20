@@ -19,8 +19,7 @@ layers.forEach((layer, i) => {
     if (num === '0') { currZeroCount++ }
   })
   if (leastZeroLayerCount.amount > currZeroCount) {
-    console.log('wtf')
-    console.log('currZeroCount:', currZeroCount)
+
     leastZeroLayerCount.amount = currZeroCount
     leastZeroLayerCount.layerNum = i
   }
@@ -44,22 +43,22 @@ layers[leastZeroLayerCount.layerNum].split('').forEach(num => {
 
 console.log('password:', password)
 // part2
-let message = ''
+const message = ''
 
-for (let i = 0; i < layerAmount; i++) {
-  const letter = ''
-  layers.forEach((layer) => {
-    let num = layer[i]
-    if (num === '0') { num = ' ' }
-    console.log('num:', num)
-    if (num !== '2' && !message[i]) {
-      message += num
-    }
-  })
-}
+// for (let i = 0; i < layerAmount; i++) {
+//   const letter = ''
+//   layers.forEach((layer) => {
+//     let num = layer[i]
+//     if (num === '0') { num = ' ' }
+//     console.log('num:', num)
+//     if (num !== '2' && !message[i]) {
+//       message += num
+//     }
+//   })
+// }
 
-for (let i = 0; i < message.length; i += 25) {
-  message = message.slice(0, i) + '\n' + message.slice(i)
-  i++
-}
-console.log(message)
+// for (let i = 0; i < message.length; i += 25) {
+//   message = message.slice(0, i) + '\n' + message.slice(i)
+//   i++
+// }
+// console.log(message)

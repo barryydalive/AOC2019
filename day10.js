@@ -95,6 +95,7 @@ const mapTargets = (station) => {
     ast.angle = ang // add the angle to the ast
   })
   asteroids = asteroids.sort((a, b)=> a.angle - b.angle)
+  console.log('asteroids:', asteroids)
   return asteroids
 }
 

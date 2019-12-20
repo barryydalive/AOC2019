@@ -12,23 +12,19 @@ input.forEach(ele => {
     graph[ele[1]].push(ele[0])
   }
 })
-
 const DFS = (key) => {
   let steps = 0
-  if (key === 'L') { console.log('go POOP') }
   if (!graph[key]) { return 0 }
   graph[key].forEach(subKey => {
     steps += DFS(subKey)
   })
   return 1 + steps
 }
-let count = 0
-for (const key in graph) {
-  if (key === 'L') { console.log('what', graph[key]) }
 
+let count = 0
+
+for (const key in graph) {
   graph[key].forEach(subKey => {
-    if (subKey === 'K') { console.log('ahgljahlgh') }
-    console.log(graph.K ? true : false)
     count += 1
     if (graph[subKey]) {
       count += DFS(subKey)
@@ -76,7 +72,7 @@ const BFS = (key) => {
   console.log('steps:', steps)
 }
 
-BFS()
+// BFS()
 // const newGraph = gds()
 // for (const key in graph) {
 //   newGraph.addNode(key)
